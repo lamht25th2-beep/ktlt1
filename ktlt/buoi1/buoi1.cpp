@@ -1,20 +1,85 @@
-// buoi1.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+
 
 #include <iostream>
+#include <vector>
+#include < limits>
+using namespace std;
 
-int main()
-{
-    std::cout << "Hello World!\n";
+struct person {
+    int id, age;
+    string name, hometown;
+};
+void show(vector<person> p) {
+    if (p.size() == 0)
+        cout << "an empty list" << endl;
+    else {
+        for (int i = 0; i < p.size(); i++) {
+            cout << "\t+ id: " << p[i].id << endl;
+            cout << "\t+ name: " << p[i].name << endl;
+            cout << "\t+ age: " << p[i].age << endl;
+            cout << "\t+ home town: " << p[i].hometown << endl;
+        }
+    }
+
+}
+int  main(){
+    do {
+        cout << "----HUMAN RESOURCE MANAGEMENT----" << endl;
+        cout << "1. Show person list " << endl;
+        cout << "2. add a person  " << endl;
+        cout << "3. remove a person by id  " << endl;
+        cout << "4.find people by name  " << endl;
+        cout << "5.export to file " << endl;
+        cout << "6.import from file  " << endl;
+        cout << "0. quit " << endl;
+        int cmd;
+        cin >> cmd;
+        switch (cmd) {
+        case 1: {
+            show(list);
+            break;
+        }
+        case 2: {
+            person a;
+            cout << "id:";
+            cin >> a.id;
+            cout << "name:";
+            cin >> a.name;
+            cout << "age:";
+            cin >> a.age;
+            cout << "hometown:";
+            cin >> a.hometown;
+            list.push_back(a);
+            break;
+        }
+        case 3: {
+            break;
+        }
+        case 4: {
+            break;
+        }
+        case 5: {
+            break;
+        }
+        case 6: {
+            break;
+        }
+        case 0: {
+            return 0;
+        }
+        default: {
+            cout << "your command isn't found . try again " << endl;
+        }
+        }
+        cout << "press enter to continue . . .";
+        cin.ignore();
+        cin.get();
+    } while (true);
+    /*int a = 5;
+    int* p = &a;
+    a = 8;
+    *p = 10;
+    cout << a << "\t" << *p;*/
+   
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
